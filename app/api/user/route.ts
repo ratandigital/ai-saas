@@ -16,9 +16,8 @@ export async function POST(req: Request) {
     try {
       await prismadb.user.create({
         data: {
-          userId,
-          email,
-          name,
+        email,
+          username: name,
         },
       });
       return NextResponse.json({ message: 'User created successfully' });
